@@ -13,7 +13,6 @@ function db_create_numeroutile($data){
         "_descp" => $data["descp"],
         "_tel" => $data["tel"]
     ));
-    $db=null;
 }
 
 

@@ -76,7 +76,7 @@
             
             // Crée une requête qui enverra le formulaire
             var request = new XMLHttpRequest();
-            request.open("POST", <?= $ACTIONS_URL_NUMEROUTILS["database"] ?>);
+            request.open("POST", "<?= $ACTIONS_URL_NUMEROUTILS["database"] ?>");
             request.send(form_data);
             console.log(form_data.entries());
 

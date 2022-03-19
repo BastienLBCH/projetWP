@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: MVC template
+Plugin Name: MVC template Numéro Utile
 Plugin URI: no uri
 Description: Simple mvc template
 Author: Marie
@@ -15,64 +15,66 @@ Author URI: no uri
 
 
 // On inclut ici le modèle qui permettra de récupérer la liste des fichiers de test
-require("accueil_module/models/model_accueil.php");
+require("numeroutile_module/models/model_numeroutile.php");
+
 
 // On inclut ici les paramètres
-require("accueil_module/settings.php");
+require("numeroutile_module/settings.php");
 
 
 // D'abord, on va définir les url que l'on veut récupérer et les lier à une fonction
 $actions_mapping = [
-    "list_accueil" => "list_accueil",
-    "create_accueil" => "create_accueil",
-    "update_accueil" => "update_accueil",
-    "delete_accueil" => "delete_accueil",
+    "list_numeroutile" => "list_numeroutile",
+    "create_numeroutile" => "create_numeroutile",
+    "update_numeroutile" => "update_numeroutile",
+    "delete_numeroutile" => "delete_numeroutile",
 ];
 
 
 // Ensuite on définit les fonctions indiquées ci-dessus, 
 // on leur donne la base de données en argument pour qu'elles puissent y accéder
-function list_accueil() {
+function list_numeroutile() {
     // Cette fonction aura pour but de lister tous les tests dans ma base de données. 
     // On va donc appeler la fonction dans le modèle permettant de les lister.
-    $liste_accueil = db_list_accueil();
+    $liste_numeroutile = db_list_numeroutile();
 
     // L'intégralité de notre base tests est maintenant stockée dans la variable list_tests
     // On va maintenant "constuire" la page que l'on enverra à l'utilisateur
-    require("accueil_module/views/list_accueil.php");
+    require("numeroutile_module/views/list_numeroutile.php");
 
     // Maintenant on affiche la vue ainsi générée :
-    echo $list_accueil_view;
-}
-
-function create_accueil() {
-    require("accueil_module/views/create_accueil.php");
-    echo $create_accueil_view;
+    echo $list_numeroutile_view;
 }
 
 
-function update_accueil(){
-    if(!isset($_GET["accueil_id"])) {
+function create_numeroutile() {
+    require("numeroutile_module/views/create_numeroutile.php");
+    echo $create_numeroutile_view;
+}
+
+
+function update_numeroutile(){
+    if(!isset($_GET["numeroutile_id"])) {
         global $ACTIONS_URL;
         $redirect = $ACTIONS_URL['list'];
         header("Location: $redirect");
     }
 
-    $accueil = db_get_accueil($_GET["accueil_id"]);
-    require("accueil_module/views/update_accueil.php");
-    echo $update_accueil_view; 
+    $numeroutile = db_get_numeroutile($_GET["numeroutile_id"]);
+    require("numeroutile_module/views/update_numeroutile.php");
+     echo $update_numeroutile_view; 
 }
 
 
-function delete_accueil(){
-    if(!isset($_GET["accueil_id"])) {
+function delete_numeroutile(){
+    if(!isset($_GET["numeroutile_id"])) {
         global $ACTIONS_URL;
         $redirect = $ACTIONS_URL['list'];
         header("Location: $redirect");
     }
 
-    require("accueil_module/views/delete_accueil.php");
-    echo $detele_accueil_view; 
+    require("numeroutile_module/views/delete_numeroutile.php");
+     echo $detele_numeroutile_view; 
 }
 
 

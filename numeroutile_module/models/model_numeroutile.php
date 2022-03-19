@@ -68,25 +68,23 @@ function db_list_numeroutile(){
 }
 
 
-$_POST = $_GET;
-print_r($_POST);
 
-if(isset($_POST["module"]) && isset($_POST["action"])) {
+if(isset($_GET["module"]) && isset($_GET["action"])) {
     $actions_mapping = [
         "create" => "db_create_numeroutile",
         "update" => "db_update_numeroutile",
         "delete" => "db_delete_numeroutile"
     ];
 
-    $module = $_POST["module"];
-    $action = $_POST["action"];
+    $module = $_GET["module"];
+    $action = $_GET["action"];
 
     echo "<br> Hello, je suis dans le isset";
 
 
     if( $module == "numeroutile" && array_key_exists($action, $actions_mapping) ){
-        echo "<br> Est-ce qu'il y a quelqu'un dans le action_mapping ?";
-        $actions_mapping[$_POST["action"]]($_POST);
+        echo "<br> Est-ce qu'il y a quelqu'un dans le action_mapping";
+        $actions_mapping[$_GET["action"]]($_GET);
     }
 }
 

@@ -62,7 +62,7 @@ function update_numeroutile(){
 
     $numeroutile = db_get_numeroutile($_GET["numeroutile_id"]);
     require("numeroutile_module/views/update_numeroutile.php");
-     echo $update_numeroutile_view; 
+    echo $update_numeroutile_view; 
 }
 
 
@@ -81,7 +81,6 @@ function delete_numeroutile(){
 // ### Ici, on va maintenant récupérer la variable dans l'URL et déclancher la fonction correspondante :
 // Variable que l'on attend dans l'url
 $variable_url = "action_module";
-
 
 // On vérifie que la variable est présente dans l'URL 
 if(isset($_GET[$variable_url])){

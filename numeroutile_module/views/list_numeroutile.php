@@ -1,6 +1,6 @@
 <?php
     // On récupère la liste d'url de notre application
-    global $ACTIONS_URL;
+    global $ACTIONS_URL_NUMEROUTILS;
 
     // Ici on démarre la construction de notre vue
     ob_start();
@@ -17,11 +17,11 @@
         ?>
 
             <li>
-                <a href="<?= sprintf($ACTIONS_URL["update"], $numeroutile["id"]) ?>">
+                <a href="<?= sprintf($ACTIONS_URL_NUMEROUTILS["update"], $numeroutile["id"]) ?>">
                 <b> <?= $numeroutile["nomcontact"] ?> : </b> <?= $numeroutile["descp"] ?> <br>
                 <b> <?= $numeroutile["tel"] ?> </a> <br>
 
-            <a href="<?= sprintf("http://www.livret-accueil-numerique.fr/numero-utiles/?action_module=delete_numeroutile&numeroutile_id=%d", $numeroutile["id"]) ?>"> Supprimer </a> 
+            <a href="<?= sprintf($ACTIONS_URL_NUMEROUTILS["delete"], $numeroutile["id"]) ?>"> Supprimer </a> 
             </li>
             <br>
             <br>

@@ -69,6 +69,8 @@ function db_list_numeroutile(){
 
 
 $_POST = $_GET;
+print_r($_POST);
+
 if(isset($_POST["module"]) && isset($_POST["action"])) {
     $actions_mapping = [
         "create" => "db_create_numeroutile",
@@ -79,7 +81,11 @@ if(isset($_POST["module"]) && isset($_POST["action"])) {
     $module = $_POST["module"];
     $action = $_POST["action"];
 
+    echo "<br> Hello, je suis dans le isset";
+
+
     if( $module == "numeroutile" && array_key_exists($action, $actions_mapping) ){
+        echo "<br> Est-ce qu'il y a quelqu'un dans le action_mapping ?";
         $actions_mapping[$_POST["action"]]($_POST);
     }
 }

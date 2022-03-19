@@ -69,7 +69,7 @@ function db_list_numeroutile(){
 
 
 // $_POST = $_GET;
-print_r($_POST);
+die(print_r($_POST));
 
 if(isset($_POST["module"]) && isset($_POST["action"])) {
     $actions_mapping = [

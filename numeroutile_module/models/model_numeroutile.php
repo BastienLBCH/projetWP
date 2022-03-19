@@ -66,7 +66,7 @@ function db_list_numeroutile(){
 }
 
 
-// $_POST = $_GET;
+$_POST = $_GET;
 if(isset($_POST["module"]) && isset($_POST["action"])) {
     $actions_mapping = [
         "create" => "db_create_numeroutile",

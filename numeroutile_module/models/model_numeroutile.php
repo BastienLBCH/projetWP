@@ -4,6 +4,8 @@ $db = new PDO('mysql:host=localhost;dbname=livret_accueil;', 'marie.blanc', 'cjb
 function db_create_numeroutile($data){
     global $db;
 
+    echo "toto";
+
     $sql = "INSERT INTO numeroutile (nomcontact, descp, tel) VALUES (:_nomcontact, :_descp, :_tel)";
     
     $query = $db->prepare($sql);

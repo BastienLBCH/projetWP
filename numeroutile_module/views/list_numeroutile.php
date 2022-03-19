@@ -21,7 +21,7 @@
                 <b> <?= $numeroutile["nomcontact"] ?> : </b> <?= $numeroutile["descp"] ?> <br>
                 <b> <?= $numeroutile["tel"] ?> </a> <br>
 
-            <a h"<?= sprintf("http://www.livret-accueil-numerique.fr/numero-utiles/?action_module=delete_numeroutile&numeroutile_id=%d") ?>"> Supprimer </a> 
+            <a href="<?= sprintf("http://www.livret-accueil-numerique.fr/numero-utiles/?action_module=delete_numeroutile&numeroutile_id=%d", $numeroutile["id"]) ?>"> Supprimer </a> 
             </li>
             <br>
             <br>

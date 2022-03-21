@@ -20,8 +20,7 @@
 
             <li>
                 <a href="<?= sprintf($ACTIONS_URL_WIFI["update"], $wifi["id"]) ?>">
-                <b> <?= $wifi["titre"] ?> : </b> <?= $wifi["sstitre"] ?> <br>
-                <b> <?= $wifi["titreen"] ?> : </b> <?= $wifi["sstitreen"] ?></a> <br>
+                <b> <?= $wifi["nameWifi"] ?> : </b> <?= $wifi["keyWifi"] ?></a> <br>
 
                 --> <a href="<?= sprintf($ACTIONS_URL_WIFI["delete"], $wifi["id"]) ?>"> Supprimer </a> 
             </li>

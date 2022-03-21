@@ -36,7 +36,7 @@ $actions_mapping = [
 function list_wifi() {
     // Cette fonction aura pour but de lister tous les tests dans ma base de données. 
     // On va donc appeler la fonction dans le modèle permettant de les lister.
-    $liste_wifi = db_list_wifi();
+    $liste_wifi = db_list_module("wifi");
     
     // L'intégralité de notre base tests est maintenant stockée dans la variable list_tests
     // On va maintenant "constuire" la page que l'on enverra à l'utilisateur
@@ -59,9 +59,9 @@ function update_wifi(){
         header("Location: $redirect");
     }
 
-    $wifi = db_get_wifi($_GET["wifi_id"]);
+    $wifi = db_get_module("wifi", $_GET["wifi_id"]);
     require("wifi_module/views/update_wifi.php");
-     echo $update_wifi_view; 
+    echo $update_wifi_view; 
 }
 
 

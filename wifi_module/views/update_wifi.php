@@ -171,10 +171,7 @@
             request.onreadystatechange = function() {
                 if(request.readyState === 4){
                     // Renvoie l'utilisateur vers la liste d'wifi
-                    // document.location.href = "<?= $ACTIONS_URL_WIFI["list"] ?>";
-
-                    let confirmationWifi = document.getElementById("confirmationWifi");
-                    confirmationWifi.innerHTML = request.response;
+                    document.location.href = "<?= $ACTIONS_URL_WIFI["list"] ?>";
                 }
             };
         });

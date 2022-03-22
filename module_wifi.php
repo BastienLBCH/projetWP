@@ -16,7 +16,7 @@ Author URI: no uri
 
 
 // On inclut ici le modèle qui permettra de récupérer la liste des fichiers de test
-require("wifi_module/models/model_wifi.php");
+require("models.php");
 
 // On inclut ici les paramètres
 require("wifi_module/settings.php");

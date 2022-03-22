@@ -5,7 +5,7 @@
         "create" => "http://www.livret-accueil-numerique.fr/wifi-hotspot-2/?action_module=create_wifi",
         "update" => "http://www.livret-accueil-numerique.fr/wifi-hotspot-2/?action_module=update_wifi&wifi_id=%d",
         "delete" => "http://www.livret-accueil-numerique.fr/wifi-hotspot-2/?action_module=delete_wifi&wifi_id=%d",
-        "database" => "http://www.livret-accueil-numerique.fr/wp-content/plugins/wifi_module/models/model_wifi.php"
+        "database" => "http://www.livret-accueil-numerique.fr/wp-content/plugins/models.php"
     ];
 
     $DEFAULT_URL = $ACTIONS_URL["list"];

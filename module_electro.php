@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: Module Wifi
+Plugin Name: Module electro
 Plugin URI: no uri
 Description: Simple mvc template
 Author: Marie
@@ -16,64 +16,64 @@ Author URI: no uri
 
 
 // On inclut ici le modèle qui permettra de récupérer la liste des fichiers de test
-require("wifi_module/models.php");
+require("electromenager_module/models.php");
 
 // On inclut ici les paramètres
-require("wifi_module/settings.php");
+require("electromenager_module/settings.php");
 
 
 // D'abord, on va définir les url que l'on veut récupérer et les lier à une fonction
 $actions_mapping = [
-    "list_wifi" => "list_wifi",
-    "create_wifi" => "create_wifi",
-    "update_wifi" => "update_wifi",
-    "delete_wifi" => "delete_wifi",
+    "list_electro" => "list_electro",
+    "create_electro" => "create_electro",
+    "update_electro" => "update_electro",
+    "delete_electro" => "delete_electro",
 ];
 
 
 // Ensuite on définit les fonctions indiquées ci-dessus, 
 // on leur donne la base de données en argument pour qu'elles puissent y accéder
-function list_wifi() {
+function list_electro() {
     // Cette fonction aura pour but de lister tous les tests dans ma base de données. 
     // On va donc appeler la fonction dans le modèle permettant de les lister.
-    $liste_wifi = db_list_module("wifi");
+    $liste_electro = db_list_module_electro("electromenage");
     
     // L'intégralité de notre base tests est maintenant stockée dans la variable list_tests
     // On va maintenant "constuire" la page que l'on enverra à l'utilisateur
-    require("wifi_module/views/list_wifi.php");
+    require("electromenager_module/views/list_electro.php");
 
     // Maintenant on affiche la vue ainsi générée :
-    echo $list_wifi_view;
+    echo $list_electro_view;
 }
 
-function create_wifi() {
-    require("wifi_module/views/create_wifi.php");
-     echo $create_wifi_view;
+function create_electro() {
+    require("electromenager_module/views/create_electro.php");
+    echo $create_electro_view;
 }
 
 
-function update_wifi(){
-    if(!isset($_GET["wifi_id"])) {
-        global $ACTIONS_URL;
-        $redirect = $ACTIONS_URL['list'];
+function update_electro(){
+    if(!isset($_GET["electro_id"])) {
+        global $ACTIONS_URL_electro;
+        $redirect = $ACTIONS_URL_electro['list'];
         header("Location: $redirect");
     }
 
-    $wifi = db_get_module("wifi", $_GET["wifi_id"]);
-    require("wifi_module/views/update_wifi.php");
-    echo $update_wifi_view; 
+    $electro = db_get_module_electro("electromenage", $_GET["electro_id"]);
+    require("electromenager_module/views/update_electro.php");
+    echo $update_electro_view; 
 }
 
 
-function delete_wifi(){
-    if(!isset($_GET["wifi_id"])) {
-        global $ACTIONS_URL;
-        $redirect = $ACTIONS_URL['list'];
+function delete_electro(){
+    if(!isset($_GET["electro_id"])) {
+        global $ACTIONS_URL_electro;
+        $redirect = $ACTIONS_URL_electro['list'];
         header("Location: $redirect");
     }
 
-    require("wifi_module/views/delete_wifi.php");
-    echo $detele_wifi_view; 
+    require("electromenager_module/views/delete_electro.php");
+    echo $detele_electro_view; 
 }
 
 

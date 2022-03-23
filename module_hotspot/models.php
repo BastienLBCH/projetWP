@@ -17,7 +17,7 @@ $reserved_keys = array(
 );
 
 
-function move_files($files) {
+function move_files_hotspot($files) {
 
     global $DEST_DIRECTORY_WIFI_FILES;
     global $BASE_URL_WIFI_FILES;
@@ -44,7 +44,7 @@ function move_files($files) {
 }
 
 
-function delete_files($data, $files) {
+function delete_files_hotspot($data, $files) {
     global $DEST_DIRECTORY_WIFI_FILES;
     global $BASE_URL_WIFI_FILES;
 
@@ -78,7 +78,7 @@ function delete_files($data, $files) {
 }
 
 
-function db_create_module($data, $files=false){
+function db_create_module_hotspot($data, $files=false){
     global $db;
     global $reserved_keys;
 
@@ -101,7 +101,7 @@ function db_create_module($data, $files=false){
 
     // Insère les fichiers
     if($files != false) {
-        $files_urls = move_files($files);
+        $files_urls = move_files_hotspot($files);
 
         foreach(array_keys($files) as $fichier) {
             // Vaudra : , fichier1, fichier2, fichier3
@@ -134,7 +134,7 @@ function db_create_module($data, $files=false){
 }
 
 
-function db_get_module($module, $module_id) {
+function db_get_module_hotspot($module, $module_id) {
     global $db;
 
     $sql = "SELECT * FROM $module WHERE id=:_id";
@@ -148,7 +148,7 @@ function db_get_module($module, $module_id) {
 }
 
 
-function db_update_module($data, $files=false) {
+function db_update_module_hotspot($data, $files=false) {
     global $db;
     global $reserved_keys;
     
@@ -171,9 +171,9 @@ function db_update_module($data, $files=false) {
     }
 
     if($files != false) {
-        delete_files($data, $files);
+        delete_files_hotspot($data, $files);
 
-        $uploaded_files = move_files($files);
+        $uploaded_files = move_files_hotspot($files);
 
         foreach(array_keys($files) as $filename) {
             $args = $args . ", $filename = :_$filename";
@@ -193,7 +193,7 @@ function db_update_module($data, $files=false) {
 }   
 
 
-function get_fichiers_columns($module){
+function get_fichiers_columns_hotspot($module){
     global $db;
 
     $sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'livret_accueil' AND TABLE_NAME = '$module' AND COLUMN_NAME REGEXP 'fichier*'";
@@ -212,7 +212,7 @@ function get_fichiers_columns($module){
 }
 
 
-function delete_register_files($columns, $module, $module_id) {
+function delete_register_files_hotspot($columns, $module, $module_id) {
     global $db;
     global $DEST_DIRECTORY_WIFI_FILES;
 
@@ -237,14 +237,14 @@ function delete_register_files($columns, $module, $module_id) {
 }
 
 
-function db_delete_module($data) {
+function db_delete_module_hotspot($data) {
     global $db;
 
     $module = $data["module"];
 
-    $columns = get_fichiers_columns($module);
+    $columns = get_fichiers_columns_hotspot($module);
     
-    delete_register_files($columns, $data["module"], $data["id"]);
+    delete_register_files_hotspot($columns, $data["module"], $data["id"]);
 
     $sql = "DELETE FROM $module WHERE id=:_id";
 
@@ -256,7 +256,7 @@ function db_delete_module($data) {
 }
 
 
-function db_list_module($module){
+function db_list_module_hotspot($module){
     global $db;
 
     $sql = "SELECT * FROM $module";
@@ -271,9 +271,9 @@ function db_list_module($module){
 // $_POST = $_GET;
 if(isset($_POST["module"]) && isset($_POST["action"])) {
     $actions_mapping = [
-        "create" => "db_create_module",
-        "update" => "db_update_module",
-        "delete" => "db_delete_module"
+        "create" => "db_create_module_hotspot",
+        "update" => "db_update_module_hotspot",
+        "delete" => "db_delete_module_hotspot"
     ];
 
     $action = $_POST["action"];

@@ -1,28 +1,37 @@
 <?php
     // On récupère la liste d'url de notre application
-    global $ACTIONS_URL_WIFI;
+    global $ACTIONS_URL_HOTSPOT;
+    global $BASE_URL_FILES;
 
     // Ici on démarre la construction de notre vue
     ob_start();
 ?>
 
 
-<div id="wifiListDiv" hidden>
-    <a href="<?= $ACTIONS_URL_WIFI["create"] ?>"> Ajouter un wifi </a>
+<div id="hotspotListDiv" hidden>
+    <a href="<?= $ACTIONS_URL_HOTSPOT["create"] ?>"> Ajouter un hotspot </a>
     <ul>
 
         <?php
         
             // Ici on a accès à la variable $liste_tests définie dans le fichier précédent
             // On va donc faire une boucle dessus.
-            foreach($liste_wifi as $wifi) {
+            foreach($liste_hotspot as $hotspot) {
         ?>
 
             <li>
-                <a href="<?= sprintf($ACTIONS_URL_WIFI["update"], $wifi["id"]) ?>">
-                <b> <?= $wifi["nameWifi"] ?> : </b> <?= $wifi["keyWifi"] ?></a> <br>
+                <a href="<?= sprintf($ACTIONS_URL_HOTSPOT["update"], $hotspot["id"]) ?>">
 
-                --> <a href="<?= sprintf($ACTIONS_URL_WIFI["delete"], $wifi["id"]) ?>"> Supprimer </a> 
+                <b> [<?= $hotspot["id"] ?>] - </b> <?= $hotspot["indication"] ?></a> <br>
+
+                --> <a href="<?= sprintf($ACTIONS_URL_HOTSPOT["delete"], $hotspot["id"]) ?>"> Supprimer </a> 
+
+                <br>
+                <br>
+
+                <!-- <img src="<?= $BASE_URL_FILES . $hotspot["fichier1"] ?>">
+                <img src="<?= $BASE_URL_FILES . $hotspot["fichier2"] ?>">
+                <img src="<?= $BASE_URL_FILES . $hotspot["fichier3"] ?>"> -->
             </li>
             <br>
             <br>
@@ -41,17 +50,17 @@
         
         // Maintenant on écrit notre code qui va permettre de placer notre division déclarée plus haut au bon endroit dans la page
 
-        let wifiListDiv = document.getElementById("wifiListDiv");
-        let placewifiListDiv = document.getElementById("placewifiListDiv");
+        let hotspotListDiv = document.getElementById("hotspotListDiv");
+        let placehotspotListDiv = document.getElementById("placeHotspotListDiv");
 
         // Si la div de destination est présente
-        if(placewifiListDiv != null){
+        if(placehotspotListDiv != null){
             // Déplace notre div
-            placewifiListDiv.appendChild(wifiListDiv);
+            placehotspotListDiv.appendChild(hotspotListDiv);
 
 
             // Enlève l'attribut hidden
-            wifiListDiv.removeAttribute("hidden");
+            hotspotListDiv.removeAttribute("hidden");
         }
     });
     
@@ -59,7 +68,7 @@
 
 <?php
     // On stock le contenu généré dans une variable :
-    $list_wifi_view = ob_get_clean();
+    $list_hotspot_view = ob_get_clean();
 ?>
 
 

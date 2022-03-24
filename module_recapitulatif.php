@@ -45,7 +45,7 @@ function list_recapitulatif() {
     $liste_recapitulatif_poubelles = db_list_module_recapitulatif("poubelles");
     $liste_recapitulatif_reglementinterieur = db_list_module_recapitulatif("reglementinterieur");
     $liste_recapitulatif_transports = db_list_module_recapitulatif("transports");
-    $liste_recapitulatif_wifi = db_list_module_recapitulatif("accueil");
+    $liste_recapitulatif_wifi = db_list_module_recapitulatif("wifi");
     
     // L'intégralité de notre base tests est maintenant stockée dans la variable list_tests
     // On va maintenant "constuire" la page que l'on enverra à l'utilisateur

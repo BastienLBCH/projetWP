@@ -21,6 +21,8 @@ require("wifi_module/models.php");
 // On inclut ici les paramètres
 require("wifi_module/settings.php");
 
+global $ACTIONS_URL_WIFI;
+global $DEFAULT_URL;
 
 // D'abord, on va définir les url que l'on veut récupérer et les lier à une fonction
 $actions_mapping = [
@@ -92,3 +94,15 @@ if(isset($_GET[$variable_url])){
         $actions_mapping[$action_url]();
     }
 }
+?>
+
+<script>
+
+// Redirection vers la l'url de base
+let current_url = window.location.href;
+
+if(current_url === "<?= $ACTIONS_URL_WIFI["base"] ?>"){
+    window.location.href = "<?= $DEFAULT_URL ?>"
+}
+
+</script>

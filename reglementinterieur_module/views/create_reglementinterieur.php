@@ -5,21 +5,20 @@
 ?>
 
 <div id="reglementinterieurDiv" hidden>
-
     <form method="POST" id="reglementinterieurForm">
-
-        <!-- Nom -->
         <label for="name">Titre:</label>
         <input type="text" id="titre" name="titre">
 
-        <a href=""><img src="https://img.icons8.com/color/48/000000/france.png"></a>
-        <a href=""><img src="https://img.icons8.com/color/48/000000/great-britain.png"></a>
+        <div class="inputAnglais">
+        <label  for="titreEn">Choose your title:</label>
+        <input  type="text" id="titreEn"  minlength="4" maxlength="75" size="75">
+    </div>
+    <img id="clickFlag" src="https://img.icons8.com/color/48/000000/great-britain.png">
 
         <p>
             <img src="https://img.icons8.com/ios-glyphs/30/000000/info--v1.png"> Max. 23 caractères. 
         </p>
 
-        <!-- Fichiers -->
         <div class="upload">
             <p class="doc">Documents: </p>
 
@@ -31,13 +30,15 @@
             <p class="doc"><strong>Formats supportés :</strong> docx, pdf, txt, jpg, png </p>
         </div>
 
-        <!-- Description -->
         <label for="name">Description:</label>
         <textarea id="descp" name="descp"rows="5" cols="33">It was a dark and stormy night...
         </textarea>
+        <div class="inputAnglais">
+        <label for="name">Description:</label>
+        <textarea id="descpen" name="descp"rows="5" cols="33">It was a dark and stormy night...
+        </textarea>
+    </div>
 
-        <a href=""><img src="https://img.icons8.com/color/48/000000/france.png"></a>
-        <a href=""><img src="https://img.icons8.com/color/48/000000/great-britain.png"></a>
         
         <p>
             <img src="https://img.icons8.com/ios-glyphs/30/000000/info--v1.png"> Max. 1500 caractères.
@@ -48,7 +49,6 @@
     <div id="confirmationreglementinterieur"></div>
 </div>
 
-
 <script>
     // On attend que tous les éléments de la page soient chargés
     document.addEventListener("DOMContentLoaded", function(event) {
@@ -56,23 +56,19 @@
         // Récupère les éléments
         let reglementinterieurDiv = document.getElementById("reglementinterieurDiv");
         let placereglementinterieurDiv = document.getElementById("placereglementinterieurDiv");
-        let clickFlag = document.getElementsByClassName("clickFlag");
+        let clickFlag = document.getElementById("clickFlag");
         let inputAnglais = document.getElementsByClassName("inputAnglais");
-        
-        // Cache les éléments en anglais
-        for(var i=0; i<inputAnglais.length; i++) {
+        for(var i=0; i<inputAnglais.length; i++){ 
             inputAnglais[i].style.display = "none";
-        }
+         }
         
         // Ajoute un événement lors d'un clique sur un drapeau
-        for(var i=0; i<clickFlag.length; i++) {
-            clickFlag[i].addEventListener("click", ()=>{
+
+            clickFlag.addEventListener("click", ()=>{
                 for(var i=0; i<inputAnglais.length; i++) {
                     inputAnglais[i].style.display = "block";
                 }
             });
-        }
-
 
         // Place le formulaire dans la page
         if(placereglementinterieurDiv != null){
@@ -89,12 +85,13 @@
 
             // Récupère les champs du formulaire
             let nomreglementinterieurFr = document.getElementById("titre");
-
+            let nomreglementinterieurEn = document.getElementById("titreEn");
             // Passé en commentaire car n'existe pas encore en anglais
             // let reglementinterieurTitreEn = document.getElementById("reglementinterieurTitreEn");
 
+            // Clé reglementinterieur, ne change pas en fonction de la langue 
             let descreglementinterieur = document.getElementById("descp");
-
+            let descreglementinterieurEn = document.getElementById("descpen");
             let inputFile1 = document.getElementById("file");
             let inputFile2 = document.getElementById("file2");
             let inputFile3 = document.getElementById("file3");
@@ -105,7 +102,8 @@
             form_data.append("action", "create");
             form_data.append("titre", nomreglementinterieurFr.value);
             form_data.append("descp", descreglementinterieur.value);
-
+            form_data.append("titreen", nomreglementinterieurEn.value);
+            form_data.append("descpen", descreglementinterieurEn.value);
             // Ajoute les fichiers au formulaire
             if(inputFile1.files.length === 1) {
                 form_data.append("fichier1", inputFile1.files[0]);
@@ -122,10 +120,8 @@
             // Vide les valeurs pour pas envoyer les données deux fois
             nomreglementinterieurFr.value = "";
             descreglementinterieur.value = "";
-
-            // for (var pair of form_data.entries()) {
-            //     console.log(pair[0]+ ', ' + pair[1]); 
-            // }
+            nomreglementinterieurEn.value = "";
+            descreglementinterieurEn.value = "";
 
             // Crée une requête qui enverra le formulaire
             var request = new XMLHttpRequest();
@@ -137,6 +133,8 @@
                 if(request.readyState === 4){
                     // Renvoie l'utilisateur vers la liste d'reglementinterieur
                     document.location.href = "<?= $ACTIONS_URL_reglementinterieur["list"] ?>";
+
+
                 }
             };
         });

@@ -21,7 +21,7 @@
             <li>
                 <a href="<?= sprintf($ACTIONS_URL_electro["update"], $electro["id"]) ?>">
                 <b> <?= $electro["titre"] ?> : </b> <?= $electro["descp"] ?></a> <br>
-
+                <b> <?= $electro["titreen"] ?> : </b> <?= $electro["descpen"] ?></a> <br>
                 --> <a href="<?= sprintf($ACTIONS_URL_electro["delete"], $electro["id"]) ?>"> Supprimer </a> 
             </li>
             <br>

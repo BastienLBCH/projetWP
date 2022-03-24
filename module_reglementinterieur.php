@@ -48,7 +48,7 @@ function list_reglementinterieur() {
 
 function create_reglementinterieur() {
     require("reglementinterieur_module/views/create_reglementinterieur.php");
-    echo $create_reglementinterieur_view;
+     echo $create_reglementinterieur_view;
 }
 
 

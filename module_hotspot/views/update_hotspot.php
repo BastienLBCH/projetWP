@@ -13,10 +13,21 @@
             Indiquer la marche à suivre pour se connecter afin que vos voyageurs se connecte facilement</p>
             <br>
 
-            <textarea id="indication" name="indication" rows="5" cols="33">
-<?= $hotspot["indication"] ?>
+  
+            <div class="inputAnglais">
+            <p>Do you have a hotspot in your establishment? <br>
+            Indicate how to connect so that your travelers can easily connect</p>
+            <br>
+                </div>
+                <textarea id="indication" name="indication" rows="5" cols="33">
+            <?= $hotspot["indication"] ?>
             </textarea>
-
+            <div class="inputAnglais">
+            <textarea id="indicationEn" name="indication" rows="5" cols="33">
+            <?= $hotspot["indicationEn"] ?>
+            </textarea>
+            <br>
+                </div>
 
             <div class="upload">
                 <p class="doc">Documents: </p>
@@ -42,23 +53,20 @@
         let hotspotDiv = document.getElementById("hotspotDiv");
         let placeHotspotDiv = document.getElementById("placeHotspotDiv");
 
-        let clickFlag = document.getElementsByClassName("clickFlag");
+        let clickFlag = document.getElementById("clickFlag");
         let inputAnglais = document.getElementsByClassName("inputAnglais");
-        
-        // Cache les éléments en anglais
-        for(var i=0; i<inputAnglais.length; i++) {
-         inputAnglais[i].style.display = "none";
-        }
+        for(var i=0; i<inputAnglais.length; i++){ 
+            console.log(inputAnglais[i]);
+            inputAnglais[i].style.display = "none";
+         }
         
         // Ajoute un événement lors d'un clique sur un drapeau
-        for(var i=0; i<clickFlag.length; i++) {
-            clickFlag[i].addEventListener("click", ()=>{
+
+            clickFlag.addEventListener("click", ()=>{
                 for(var i=0; i<inputAnglais.length; i++) {
                     inputAnglais[i].style.display = "block";
                 }
             });
-        }
-
 
         // Place le formulaire dans la page
         if(placeHotspotDiv != null){
@@ -76,6 +84,7 @@
 
             // Récupération des éléments du formulaire
             let indicationHotspot = document.getElementById("indication");
+            let indicationEn = document.getElementById("indicationEn");
 
             let inputFile1 = document.getElementById("file");
             let inputFile2 = document.getElementById("file2");
@@ -87,6 +96,7 @@
             form_data.append("action", "update");
             form_data.append("id", "<?= $_GET["hotspot_id"] ?>");
             form_data.append("indication", indicationHotspot.value);
+            form_data.append("indicationEn", indicationEn.value);
 
             // Ajoute les fichiers au formulaire
             if(inputFile1.files.length === 1) {
@@ -103,11 +113,7 @@
 
             // Vide les valeurs pour pas envoyer les données deux fois
             indicationHotspot.value = "";
-
-            // for (var pair of form_data.entries()) {
-            //     console.log(pair[0]+ ', ' + pair[1]); 
-            // }
-
+            indicationEn.value = "";
             // Crée une requête qui enverra le formulaire
             var request = new XMLHttpRequest();
             request.open("POST", "<?= $ACTIONS_URL_HOTSPOT["database"] ?>");
@@ -119,9 +125,6 @@
                     // Renvoie l'utilisateur vers la liste d'wifi
                     document.location.href = "<?= $ACTIONS_URL_HOTSPOT["list"] ?>";
 
-                    // let confirmationWifi = document.getElementById("confirmationWifi");
-
-                    // confirmationWifi.innerHTML = request.response;
                 }
             };
         });

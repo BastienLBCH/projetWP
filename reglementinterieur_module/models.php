@@ -82,8 +82,6 @@ function db_create_module_reglementinterieur($data, $files=false){
     global $db;
     global $reserved_keys;
 
-    echo "hello there";
-
     // Génère les arguments
     $execution_array = array();
     $args = "";

@@ -7,7 +7,7 @@
 ?>
 
 
-<div id="wifiListDiv" hidden>
+<div id="wifiListDiv">
     <a href="<?= $ACTIONS_URL_WIFI["create"] ?>"> Ajouter un wifi </a>
     <ul>
 
@@ -20,7 +20,9 @@
 
             <li>
                 <a href="<?= sprintf($ACTIONS_URL_WIFI["update"], $wifi["id"]) ?>">
+                <b> <?= $wifi["nomWifiFr"] ?> : </b> <?= $wifi["cleWifi"] ?></a> <br>
                 <b> <?= $wifi["nameWifi"] ?> : </b> <?= $wifi["keyWifi"] ?></a> <br>
+              
 
                 --> <a href="<?= sprintf($ACTIONS_URL_WIFI["delete"], $wifi["id"]) ?>"> Supprimer </a> 
             </li>

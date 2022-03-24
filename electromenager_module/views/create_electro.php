@@ -9,8 +9,11 @@
         <label for="name">Titre:</label>
         <input type="text" id="titre" name="titre">
 
-        <a href=""><img src="https://img.icons8.com/color/48/000000/france.png"></a>
-        <a href=""><img src="https://img.icons8.com/color/48/000000/great-britain.png"></a>
+        <div class="inputAnglais">
+        <label  for="titreEn">Choose your title:</label>
+        <input  type="text" id="titreEn"  minlength="4" maxlength="75" size="75">
+    </div>
+    <img id="clickFlag" src="https://img.icons8.com/color/48/000000/great-britain.png">
 
         <p>
             <img src="https://img.icons8.com/ios-glyphs/30/000000/info--v1.png"> Max. 23 caractères. 
@@ -30,9 +33,11 @@
         <label for="name">Description:</label>
         <textarea id="descp" name="descp"rows="5" cols="33">It was a dark and stormy night...
         </textarea>
-
-        <a href=""><img src="https://img.icons8.com/color/48/000000/france.png"></a>
-        <a href=""><img src="https://img.icons8.com/color/48/000000/great-britain.png"></a>
+        <div class="inputAnglais">
+        <label for="name">Description:</label>
+        <textarea id="descpen" name="descp"rows="5" cols="33">It was a dark and stormy night...
+        </textarea>
+    </div>
         
         <p>
             <img src="https://img.icons8.com/ios-glyphs/30/000000/info--v1.png"> Max. 1500 caractères.
@@ -50,22 +55,19 @@
         // Récupère les éléments
         let electroDiv = document.getElementById("electroDiv");
         let placeelectroDiv = document.getElementById("placeelectroDiv");
-        let clickFlag = document.getElementsByClassName("clickFlag");
+        let clickFlag = document.getElementById("clickFlag");
         let inputAnglais = document.getElementsByClassName("inputAnglais");
-        
-        // Cache les éléments en anglais
-        for(var i=0; i<inputAnglais.length; i++) {
+        for(var i=0; i<inputAnglais.length; i++){ 
             inputAnglais[i].style.display = "none";
-        }
+         }
         
         // Ajoute un événement lors d'un clique sur un drapeau
-        for(var i=0; i<clickFlag.length; i++) {
-            clickFlag[i].addEventListener("click", ()=>{
+
+            clickFlag.addEventListener("click", ()=>{
                 for(var i=0; i<inputAnglais.length; i++) {
                     inputAnglais[i].style.display = "block";
                 }
             });
-        }
 
 
         // Place le formulaire dans la page
@@ -83,13 +85,11 @@
 
             // Récupère les champs du formulaire
             let nomelectroFr = document.getElementById("titre");
+            let nomelectroEn = document.getElementById("titreEn");
 
-            // Passé en commentaire car n'existe pas encore en anglais
-            // let electroTitreEn = document.getElementById("electroTitreEn");
-
-            // Clé electro, ne change pas en fonction de la langue 
-            let cleelectro = document.getElementById("descp");
-
+            // Description electro, ne change pas en fonction de la langue 
+            let descpelectro = document.getElementById("descp");
+            let descelectroEn = document.getElementById("descpen");
             let inputFile1 = document.getElementById("file");
             let inputFile2 = document.getElementById("file2");
             let inputFile3 = document.getElementById("file3");
@@ -99,8 +99,9 @@
             form_data.append("module", "electromenage");
             form_data.append("action", "create");
             form_data.append("titre", nomelectroFr.value);
-            form_data.append("descp", cleelectro.value);
-
+            form_data.append("descp", descpelectro.value);
+            form_data.append("titreen", nomelectroEn.value);
+            form_data.append("descpen", descelectroEn.value);
             // Ajoute les fichiers au formulaire
             if(inputFile1.files.length === 1) {
                 form_data.append("fichier1", inputFile1.files[0]);
@@ -116,11 +117,10 @@
 
             // Vide les valeurs pour pas envoyer les données deux fois
             nomelectroFr.value = "";
-            cleelectro.value = "";
+            descpelectro.value = "";
+            nomelectroEn.value = "";
+            descelectroEn.value = "";
 
-            // for (var pair of form_data.entries()) {
-            //     console.log(pair[0]+ ', ' + pair[1]); 
-            // }
 
             // Crée une requête qui enverra le formulaire
             var request = new XMLHttpRequest();
@@ -133,9 +133,6 @@
                     // Renvoie l'utilisateur vers la liste d'electro
                     document.location.href = "<?= $ACTIONS_URL_electro["list"] ?>";
 
-                    // let confirmationelectro = document.getElementById("confirmationelectro");
-
-                    // confirmationelectro.innerHTML = request.response;
                 }
             };
         });

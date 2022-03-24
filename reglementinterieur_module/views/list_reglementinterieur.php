@@ -22,6 +22,7 @@
             <li>
                 <a href="<?= sprintf($ACTIONS_URL_reglementinterieur["update"], $reglementinterieur["id"]) ?>">
                 <b> <?= $reglementinterieur["titre"] ?> : </b> <?= $reglementinterieur["descp"] ?> </a> <br>
+                <b> <?= $reglementinterieur["titreen"] ?> : </b> <?= $reglementinterieur["descpen"] ?> </a> <br>
                 <img src="<?= $BASE_URL_FILES . $reglementinterieur["fichier1"] ?>" >
                 --> <a href="<?= sprintf($ACTIONS_URL_reglementinterieur["delete"], $reglementinterieur["id"]) ?>"> Supprimer </a> 
             </li>

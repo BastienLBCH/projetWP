@@ -22,7 +22,8 @@
             <li>
                 <a href="<?= sprintf($ACTIONS_URL_HOTSPOT["update"], $hotspot["id"]) ?>">
 
-                <b> [<?= $hotspot["id"] ?>] - </b> <?= $hotspot["indication"] ?></a> <br>
+                <b> [<?= $hotspot["id"] ?>] - </b> <?= $hotspot["indication"] ?><br>
+                <b> [<?= $hotspot["id"] ?>] - </b> <?= $hotspot["indicationEn"] ?></a> <br>
 
                 --> <a href="<?= sprintf($ACTIONS_URL_HOTSPOT["delete"], $hotspot["id"]) ?>"> Supprimer </a> 
 

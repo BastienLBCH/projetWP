@@ -21,6 +21,8 @@ require("transports_module/models.php");
 // On inclut ici les paramètres
 require("transports_module/settings.php");
 
+global $ACTIONS_URL_transports;
+global $DEFAULT_URL;
 
 // D'abord, on va définir les url que l'on veut récupérer et les lier à une fonction
 $actions_mapping = [
@@ -92,3 +94,16 @@ if(isset($_GET[$variable_url])){
         $actions_mapping[$action_url]();
     }
 }
+
+?>
+
+<script>
+
+// Redirection vers la l'url de base
+let current_url_transports = window.location.href;
+
+if(current_url_transports === "<?= $ACTIONS_URL_transports["base"] ?>"){
+    window.location.href = "<?= $DEFAULT_URL ?>"
+}
+
+</script>

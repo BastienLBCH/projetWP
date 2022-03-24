@@ -4,7 +4,7 @@
     ob_start();
 ?>
 
-<div id="wifiDiv">
+<div id="wifiDiv" hidden>
 
     <!-- Boutons choix wifi / hotspot -->
     
@@ -77,7 +77,11 @@
                 }
             });
         
-
+                   // Place le formulaire dans la page
+        if(placewifiDiv != null){
+            placewifiDiv.appendChild(wifiDiv);
+            wifiDiv.removeAttribute("hidden");
+        }
 
 
         let wifiForm = document.getElementById("wifiForm");

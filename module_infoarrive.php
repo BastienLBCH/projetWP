@@ -21,7 +21,8 @@ require("infoarrivee_module/models.php");
 // On inclut ici les paramètres
 require("infoarrivee_module/settings.php");
 
-
+global $ACTIONS_URL_infoarrivee;
+global $DEFAULT_URL;
 // D'abord, on va définir les url que l'on veut récupérer et les lier à une fonction
 $actions_mapping = [
     "list_infoarrivee" => "list_infoarrivee",
@@ -92,3 +93,15 @@ if(isset($_GET[$variable_url])){
         $actions_mapping[$action_url]();
     }
 }
+?>
+
+<script>
+
+// Redirection vers la l'url de base
+let current_url_infoarrive = window.location.href;
+
+if(current_url_infoarrive === "<?= $ACTIONS_URL_infoarrivee["base"] ?>"){
+    window.location.href = "<?= $DEFAULT_URL ?>"
+}
+
+</script>

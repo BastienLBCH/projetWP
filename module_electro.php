@@ -20,7 +20,8 @@ require("electromenager_module/models.php");
 
 // On inclut ici les paramètres
 require("electromenager_module/settings.php");
-
+global $ACTIONS_URL_electro;
+global $DEFAULT_URL;
 
 // D'abord, on va définir les url que l'on veut récupérer et les lier à une fonction
 $actions_mapping = [
@@ -92,3 +93,15 @@ if(isset($_GET[$variable_url])){
         $actions_mapping[$action_url]();
     }
 }
+?>
+
+<script>
+
+// Redirection vers la l'url de base
+let current_url_electro = window.location.href;
+
+if(current_url_electro === "<?= $ACTIONS_URL_electro["base"] ?>"){
+    window.location.href = "<?= $DEFAULT_URL ?>"
+}
+
+</script>

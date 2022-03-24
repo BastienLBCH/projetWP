@@ -4,7 +4,7 @@
     ob_start();
 ?>
 
-<div id="wifiDiv" >
+<div id="wifiDiv"  >
 
     
     <!-- Formulaire wifi -->

@@ -99,9 +99,9 @@ if(isset($_GET[$variable_url])){
 <script>
 
 // Redirection vers la l'url de base
-let current_url = window.location.href;
+let current_url_wifi = window.location.href;
 
-if(current_url === "<?= $ACTIONS_URL_WIFI["base"] ?>"){
+if(current_url_wifi === "<?= $ACTIONS_URL_WIFI["base"] ?>"){
     window.location.href = "<?= $DEFAULT_URL ?>"
 }
 

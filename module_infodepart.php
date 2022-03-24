@@ -21,7 +21,8 @@ require("infodepart_module/models.php");
 // On inclut ici les paramètres
 require("infodepart_module/settings.php");
 
-
+global $ACTIONS_URL_infodepart;
+global $DEFAULT_URL;
 // D'abord, on va définir les url que l'on veut récupérer et les lier à une fonction
 $actions_mapping = [
     "list_infodepart" => "list_infodepart",
@@ -92,3 +93,15 @@ if(isset($_GET[$variable_url])){
         $actions_mapping[$action_url]();
     }
 }
+?>
+
+<script>
+
+// Redirection vers la l'url de base
+let current_url_infodepart = window.location.href;
+
+if(current_url_infodepart === "<?= $ACTIONS_URL_infodepart["base"] ?>"){
+    window.location.href = "<?= $DEFAULT_URL ?>"
+}
+
+</script>

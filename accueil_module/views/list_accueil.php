@@ -20,7 +20,7 @@
                 <a href="<?= sprintf($ACTIONS_URL["update"], $accueil["id"]) ?>">
                 <b> <?= $accueil["titre"] ?> : </b> <?= $accueil["sstitre"] ?> <br>
                 <b> <?= $accueil["titreen"] ?> : </b> <?= $accueil["sstitreen"] ?></a> <br>
-
+               
                 --> <a href="<?= sprintf($ACTIONS_URL["delete"], $accueil["id"]) ?>"> Supprimer </a> 
             </li>
             <br>

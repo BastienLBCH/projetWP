@@ -1,8 +1,7 @@
 <?php
 
 /*
-Plugin Name: Module poubelles
-Plugin URI: no uri
+Plugin Name: Module recapitulatif
 Description: Simple mvc template
 Author: Marie
 Version: 1.0
@@ -16,66 +15,46 @@ Author URI: no uri
 
 
 // On inclut ici le modèle qui permettra de récupérer la liste des fichiers de test
-require("poubelles_module/models.php");
+require("recapitulatif_module/models.php");
 
 // On inclut ici les paramètres
-require("poubelles_module/settings.php");
-global $ACTIONS_URL_poubelles;
+require("recapitulatif_module/settings.php");
+global $ACTIONS_URL_recapitulatif;
 global $DEFAULT_URL;
 
 // D'abord, on va définir les url que l'on veut récupérer et les lier à une fonction
 $actions_mapping = [
-    "list_poubelles" => "list_poubelles",
-    "create_poubelles" => "create_poubelles",
-    "update_poubelles" => "update_poubelles",
-    "delete_poubelles" => "delete_poubelles",
+    "list_recapitulatif" => "list_recapitulatif",
 ];
 
 
 // Ensuite on définit les fonctions indiquées ci-dessus, 
 // on leur donne la base de données en argument pour qu'elles puissent y accéder
-function list_poubelles() {
+function list_recapitulatif() {
     // Cette fonction aura pour but de lister tous les tests dans ma base de données. 
     // On va donc appeler la fonction dans le modèle permettant de les lister.
-    $liste_poubelles = db_list_module_poubelles("poubelles");
+    $liste_recapitulatif = db_list_module_recapitulatif("recapitulatif");
+    $liste_recapitulatif_accueil = db_list_module_recapitulatif("accueil");
+    $liste_recapitulatif_digicode = db_list_module_recapitulatif("digicode");
+    $liste_recapitulatif_electromenage = db_list_module_recapitulatif("electromenage");
+    $liste_recapitulatif_infoarrivee = db_list_module_recapitulatif("infoarrivee");
+    $liste_recapitulatif_infodepart = db_list_module_recapitulatif("infodepart");
+    $liste_recapitulatif_hotspot = db_list_module_recapitulatif("hotspot");
+    $liste_recapitulatif_numeroutile = db_list_module_recapitulatif("numeroutile");
+    $liste_recapitulatif_parkings = db_list_module_recapitulatif("parkings");
+    $liste_recapitulatif_poubelles = db_list_module_recapitulatif("poubelles");
+    $liste_recapitulatif_reglementinterieur = db_list_module_recapitulatif("reglementinterieur");
+    $liste_recapitulatif_transports = db_list_module_recapitulatif("transports");
+    $liste_recapitulatif_wifi = db_list_module_recapitulatif("accueil");
     
     // L'intégralité de notre base tests est maintenant stockée dans la variable list_tests
     // On va maintenant "constuire" la page que l'on enverra à l'utilisateur
-    require("poubelles_module/views/list_poubelles.php");
+    require("recapitulatif_module/views/list_recapitulatif.php");
 
     // Maintenant on affiche la vue ainsi générée :
-    echo $list_poubelles_view;
+    echo $list_recapitulatif_view;
 }
 
-function create_poubelles() {
-    require("poubelles_module/views/create_poubelles.php");
-     echo $create_poubelles_view;
-}
-
-
-function update_poubelles(){
-    if(!isset($_GET["poubelles_id"])) {
-        global $ACTIONS_URL;
-        $redirect = $ACTIONS_URL['list'];
-        header("Location: $redirect");
-    }
-
-    $poubelles = db_get_module_poubelles("poubelles", $_GET["poubelles_id"]);
-    require("poubelles_module/views/update_poubelles.php");
-    echo $update_poubelles_view; 
-}
-
-
-function delete_poubelles(){
-    if(!isset($_GET["poubelles_id"])) {
-        global $ACTIONS_URL;
-        $redirect = $ACTIONS_URL['list'];
-        header("Location: $redirect");
-    }
-
-    require("poubelles_module/views/delete_poubelles.php");
-    echo $detele_poubelles_view; 
-}
 
 
 // ### Ici, on va maintenant récupérer la variable dans l'URL et déclancher la fonction correspondante :
@@ -98,9 +77,9 @@ if(isset($_GET[$variable_url])){
 <script>
 
 // Redirection vers la l'url de base
-let current_url_poubelles = window.location.href;
+let current_url_recapitulatif = window.location.href;
 
-if(current_url_poubelles === "<?= $ACTIONS_URL_poubelles["base"] ?>"){
+if(current_url_recapitulatif === "<?= $ACTIONS_URL_recapitulatif["base"] ?>"){
     window.location.href = "<?= $DEFAULT_URL ?>"
 }
 

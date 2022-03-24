@@ -21,7 +21,8 @@ require("parkings_module/models.php");
 // On inclut ici les paramètres
 require("parkings_module/settings.php");
 
-
+global $ACTIONS_URL_parkings;
+global $DEFAULT_URL;
 // D'abord, on va définir les url que l'on veut récupérer et les lier à une fonction
 $actions_mapping = [
     "list_parkings" => "list_parkings",
@@ -92,3 +93,15 @@ if(isset($_GET[$variable_url])){
         $actions_mapping[$action_url]();
     }
 }
+?>
+
+<script>
+
+// Redirection vers la l'url de base
+let current_url_parkings = window.location.href;
+
+if(current_url_parkings === "<?= $ACTIONS_URL_parkings["base"] ?>"){
+    window.location.href = "<?= $DEFAULT_URL ?>"
+}
+
+</script>

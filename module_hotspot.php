@@ -105,3 +105,7 @@ if(current_url_hotspot === "<?= $ACTIONS_URL_HOTSPOT["base"] ?>"){
 }
 
 </script>
+
+<?php
+
+?>

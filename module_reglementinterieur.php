@@ -105,3 +105,7 @@ if(current_url_reglementinterieur === "<?= $ACTIONS_URL_reglementinterieur["base
 }
 
 </script>
+
+<?php
+
+?>

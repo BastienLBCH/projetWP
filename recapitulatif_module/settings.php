@@ -1,8 +1,8 @@
 <?php
 
     $ACTIONS_URL_recapitulatif = [
-        "base" => "http://www.livret-accueil-numerique.fr/page-d-exemple/recapitulatif/",
-        "list" => "http://www.livret-accueil-numerique.fr/page-d-exemple/recapitulatif/?action_module=list_recapitulatif"
+        "base" => "http://www.livret-accueil-numerique.fr/livret/recapitulatif/",
+        "list" => "http://www.livret-accueil-numerique.fr/livret/recapitulatif/?action_module=list_recapitulatif"
     ];
 
     $DEFAULT_URL = $ACTIONS_URL_recapitulatif["list"];

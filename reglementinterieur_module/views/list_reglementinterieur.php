@@ -34,6 +34,8 @@
             }
         ?>
     </ul>  
+    <a href="http://www.livret-accueil-numerique.fr/livret/electromenager/?action_module=create_electro">Previous </a>
+    <a href="http://www.livret-accueil-numerique.fr/livret/poubelles/?action_module=create_poubelles">Next </a>
 </div>
 
 

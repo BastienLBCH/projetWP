@@ -58,13 +58,12 @@
             let descp = document.getElementById("descp");
             let tel = document.getElementById("tel");
 
-
+            let userID = document.getElementById("user_id").getAttribute("value");
             // Crée un formulaire qui sera envoyé via une requête JS
             var form_data = new FormData();
-            console.log(nomContact.value);
-
             form_data.append("module", "numeroutile");
             form_data.append("action", "create");
+            form_data.append("id_user", userID);
             form_data.append("nomcontact", nomContact.value);
             form_data.append("tel", tel.value);
             form_data.append("descp", descp.value);

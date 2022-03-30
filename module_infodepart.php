@@ -105,3 +105,7 @@ if(current_url_infodepart === "<?= $ACTIONS_URL_infodepart["base"] ?>"){
 }
 
 </script>
+
+<?php
+
+?>

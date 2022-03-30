@@ -1,11 +1,11 @@
 <?php
 
     $ACTIONS_URL_infodepart = [
-        "base" => "http://www.livret-accueil-numerique.fr/page-d-exemple/infodepart/",
-        "list" => "http://www.livret-accueil-numerique.fr/page-d-exemple/infodepart/?action_module=list_infodepart",
-        "create" => "http://www.livret-accueil-numerique.fr/page-d-exemple/infodepart/?action_module=create_infodepart",
-        "update" => "http://www.livret-accueil-numerique.fr/page-d-exemple/infodepart/?action_module=update_infodepart&infodepart_id=%d",
-        "delete" => "http://www.livret-accueil-numerique.fr/page-d-exemple/infodepart/?action_module=delete_infodepart&infodepart_id=%d",
+        "base" => "http://www.livret-accueil-numerique.fr/livret/infodepart/",
+        "list" => "http://www.livret-accueil-numerique.fr/livret/infodepart/?action_module=list_infodepart",
+        "create" => "http://www.livret-accueil-numerique.fr/livret/infodepart/?action_module=create_infodepart",
+        "update" => "http://www.livret-accueil-numerique.fr/livret/infodepart/?action_module=update_infodepart&infodepart_id=%d",
+        "delete" => "http://www.livret-accueil-numerique.fr/livret/infodepart/?action_module=delete_infodepart&infodepart_id=%d",
         "database" => "http://www.livret-accueil-numerique.fr/wp-content/plugins/infodepart_module/models.php"
     ];
 

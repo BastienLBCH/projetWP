@@ -33,6 +33,8 @@
             }
         ?>
     </ul>  
+    <a href="http://www.livret-accueil-numerique.fr/livret/transports/?action_module=create_transports">Previous </a>
+    <a href="http://www.livret-accueil-numerique.fr/livret/infodepart/?action_module=create_infodepart">Next </a>
 </div>
 
 

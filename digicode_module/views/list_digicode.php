@@ -31,6 +31,8 @@
             }
         ?>
     </ul>  
+    <a href="http://www.livret-accueil-numerique.fr/livret/wifi-hotspot-2/?action_module=create_wifi">Previous </a>
+    <a href="http://www.livret-accueil-numerique.fr/livret/numero-utiles/?action_module=create_numeroutile">Next </a>
 </div>
 
 

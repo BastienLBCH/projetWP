@@ -4,7 +4,7 @@
     ob_start();
 ?>
 
-<div id="wifiDiv"  >
+<div id="wifiDiv"  hidden>
 
     
     <!-- Formulaire wifi -->
@@ -20,17 +20,17 @@
             <br>
             
             <label for="name">Nom du WIFI:</label>
-            <input type="text" id="nomWifiFr" name="wifi">
+            <input type="text" id="nomWifiFr" name="wifi" value='<?= $wifi['nomWifiFr'] ?>'>
             <div class="inputAnglais">
                 <label  for="titreEn">Name wifi:</label>
-                <input  type="text" id="namewifi"  minlength="4" maxlength="75" size="75">
+                <input  type="text" id="namewifi"  minlength="4" maxlength="75" size="75" value='<?= $wifi['nameWifi'] ?>'>
                 </div>
 
             <label for="key">Clé WIFI:</label>
-            <input type="text" id="cleWifi" name="cle">
+            <input type="text" id="cleWifi" name="cle" value='<?= $wifi['cleWifi'] ?>'>
             <div class="inputAnglais">
                 <label  for="titreEn">Key wifi:</label>
-                <input  type="text" id="keywifi"  minlength="4" maxlength="75" size="75">
+                <input  type="text" id="keywifi"  minlength="4" maxlength="75" size="75" value='<?= $wifi['keyWifi'] ?>'>
                 </div>
             <div class="upload">
                 <p class="doc">Documents: </p>
@@ -58,7 +58,6 @@
 
         // Récupère les éléments
         let wifiDiv = document.getElementById("wifiDiv");
-        let placewifiDiv = document.getElementById("placewifiDiv");
         let placewifiDiv = document.getElementById("placewifiDiv");
         let clickFlag = document.getElementById("clickFlag");
         let inputAnglais = document.getElementsByClassName("inputAnglais");
@@ -90,6 +89,9 @@
 
             // Récupère les champs du formulaire
             let cleWifi = document.getElementById("cleWifi");
+
+            let namewifi = document.getElementById("namewifi");
+            let nomWifiFr = document.getElementById("nomWifiFr");
             let keywifi = document.getElementById("keywifi");
 
             let inputFile1 = document.getElementById("file");
@@ -99,7 +101,8 @@
             // Crée un formulaire qui sera envoyé via une requête HTTP par javascript
             var form_data = new FormData();
             form_data.append("module", "wifi");
-            form_data.append("action", "create");
+            form_data.append("action", "update");
+            form_data.append("id", "<?= $_GET["wifi_id"] ?>");
             form_data.append("nomWifiFr", nomWifiFr.value);
             form_data.append("nameWifi", namewifi.value);
             form_data.append("cleWifi", cleWifi.value);
@@ -121,8 +124,8 @@
             // Vide les valeurs pour pas envoyer les données deux fois
             nomWifiFr.value = "";
             cleWifi.value = "";
-            nameWifi.value = "";
-            keyWifi.value = "";
+            namewifi.value = "";
+            keywifi.value = "";
 
             // Crée une requête qui enverra le formulaire
             var request = new XMLHttpRequest();

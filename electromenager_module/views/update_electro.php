@@ -61,7 +61,7 @@
         // Récupère les éléments
         let electroDiv = document.getElementById("electroDiv");
         let placeelectroDiv = document.getElementById("placeelectroDiv");
-        let clickFlag = document.getElementById("clickFlag");
+        // let clickFlag = document.getElementById("clickFlag");
         let inputAnglais = document.getElementsByClassName("inputAnglais");
         for(var i=0; i<inputAnglais.length; i++){ 
             console.log(inputAnglais[i]);
@@ -70,11 +70,11 @@
         
         // Ajoute un événement lors d'un clique sur un drapeau
 
-            clickFlag.addEventListener("click", ()=>{
-                for(var i=0; i<inputAnglais.length; i++) {
-                    inputAnglais[i].style.display = "block";
-                }
-            });
+            // clickFlag.addEventListener("click", ()=>{
+            //     for(var i=0; i<inputAnglais.length; i++) {
+            //         inputAnglais[i].style.display = "block";
+            //     }
+            // });
 
         // Place le formulaire dans la page
         if(placeelectroDiv != null){

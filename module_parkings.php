@@ -105,3 +105,7 @@ if(current_url_parkings === "<?= $ACTIONS_URL_parkings["base"] ?>"){
 }
 
 </script>
+
+<?php
+
+?>

@@ -105,3 +105,7 @@ if(current_url_digicode === "<?= $ACTIONS_URL_digicode["base"] ?>"){
 }
 
 </script>
+
+<?php
+
+?>

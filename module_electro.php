@@ -105,3 +105,7 @@ if(current_url_electro === "<?= $ACTIONS_URL_electro["base"] ?>"){
 }
 
 </script>
+
+<?php
+
+?>

@@ -105,3 +105,7 @@ if(current_url_numeroutile === "<?= $ACTIONS_URL_NUMEROUTILS["base"] ?>"){
 }
 
 </script>
+
+<?php
+
+?>

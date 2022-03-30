@@ -101,11 +101,12 @@
             let inputFile1 = document.getElementById("file");
             let inputFile2 = document.getElementById("file2");
             let inputFile3 = document.getElementById("file3");
-
+            let userID = document.getElementById("user_id").getAttribute("value");
             // Crée un formulaire qui sera envoyé via une requête HTTP par javascript
             var form_data = new FormData();
             form_data.append("module", "infoarrivee");
             form_data.append("action", "create");
+            form_data.append("id_user", userID);
             form_data.append("descp", descinfoarrivee.value);
             form_data.append("horaire", selectedOption.value);
 

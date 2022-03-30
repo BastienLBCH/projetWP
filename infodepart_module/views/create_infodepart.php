@@ -86,12 +86,13 @@
             // Clé infodepart, ne change pas en fonction de la langue 
             let descinfodepart = document.getElementById("infodepart");
 
-           
+            let userID = document.getElementById("user_id").getAttribute("value");
 
             // Crée un formulaire qui sera envoyé via une requête HTTP par javascript
             var form_data = new FormData();
             form_data.append("module", "infodepart");
             form_data.append("action", "create");
+            form_data.append("id_user", userID);
             form_data.append("instruction", descinfodepart.value);
             form_data.append("horaire", selectedOption.value);
 

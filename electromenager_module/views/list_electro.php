@@ -32,6 +32,8 @@
             }
         ?>
     </ul>  
+    <a href="http://www.livret-accueil-numerique.fr/livret/numero-utiles/?action_module=create_numeroutile">Previous </a>
+    <a href="http://www.livret-accueil-numerique.fr/livret/reglementinterieur/?action_module=create_reglementinterieur">Next </a>
 </div>
 
 

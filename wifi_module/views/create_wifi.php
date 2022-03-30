@@ -105,13 +105,11 @@
             let inputFile1 = document.getElementById("file");
             let inputFile2 = document.getElementById("file2");
             let inputFile3 = document.getElementById("file3");
-            let userID = document.getElementById("user_id")
 
             // Crée un formulaire qui sera envoyé via une requête HTTP par javascript
             var form_data = new FormData();
             form_data.append("module", "wifi");
             form_data.append("action", "create");
-            form_data.append("id_user", userID.getAttribute("value"));
             form_data.append("nomWifiFr", nomWifiFr.value);
             form_data.append("nameWifi", namewifi.value);
             form_data.append("cleWifi", cleWifi.value);

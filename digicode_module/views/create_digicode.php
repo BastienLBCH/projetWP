@@ -19,6 +19,7 @@
 <button id="ajoutDigi" type="button">Ajouter un digicode</button> 
 <input  type="submit" value="Valider" />
 </form>
+
 </div>
 
 <script>

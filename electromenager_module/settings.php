@@ -1,11 +1,11 @@
 <?php
 
     $ACTIONS_URL_electro = [
-        "base" => "http://www.livret-accueil-numerique.fr/page-d-exemple/electromenager/",
-        "list" => "http://www.livret-accueil-numerique.fr/page-d-exemple/electromenager/?action_module=list_electro",
-        "create" => "http://www.livret-accueil-numerique.fr/page-d-exemple/electromenager/?action_module=create_electro",
-        "update" => "http://www.livret-accueil-numerique.fr/page-d-exemple/electromenager/?action_module=update_electro&electro_id=%d",
-        "delete" => "http://www.livret-accueil-numerique.fr/page-d-exemple/electromenager/?action_module=delete_electro&electro_id=%d",
+        "base" => "http://www.livret-accueil-numerique.fr/livret/electromenager/",
+        "list" => "http://www.livret-accueil-numerique.fr/livret/electromenager/?action_module=list_electro",
+        "create" => "http://www.livret-accueil-numerique.fr/livret/electromenager/?action_module=create_electro",
+        "update" => "http://www.livret-accueil-numerique.fr/livret/electromenager/?action_module=update_electro&electro_id=%d",
+        "delete" => "http://www.livret-accueil-numerique.fr/livret/electromenager/?action_module=delete_electro&electro_id=%d",
         "database" => "http://www.livret-accueil-numerique.fr/wp-content/plugins/electromenager_module/models.php"
     ];
 

@@ -98,10 +98,14 @@ if(isset($_GET[$variable_url])){
 <script>
 
 // Redirection vers la l'url de base
-let current_url_infoarrive = window.location.href;
+let current_url_infoarrivee = window.location.href;
 
-if(current_url_infoarrive === "<?= $ACTIONS_URL_infoarrivee["base"] ?>"){
+if(current_url_infoarrivee === "<?= $ACTIONS_URL_infoarrivee["base"] ?>"){
     window.location.href = "<?= $DEFAULT_URL ?>"
 }
 
 </script>
+
+<?php
+
+?>

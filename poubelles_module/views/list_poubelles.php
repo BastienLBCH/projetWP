@@ -34,6 +34,8 @@
             }
         ?>
     </ul>  
+    <a href="http://www.livret-accueil-numerique.fr/livret/reglementinterieur/?action_module=create_reglementinterieur">Previous </a>
+    <a href="http://www.livret-accueil-numerique.fr/livret/parkings/?action_module=create_parkings">Next </a>
 </div>
 
 

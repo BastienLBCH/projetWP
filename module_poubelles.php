@@ -105,3 +105,4 @@ if(current_url_poubelles === "<?= $ACTIONS_URL_poubelles["base"] ?>"){
 }
 
 </script>
+

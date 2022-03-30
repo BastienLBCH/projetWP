@@ -83,12 +83,14 @@ function get_fichiers_columns_recapitulatif($module){
 
 
 
-function db_list_module_recapitulatif($module){
+function db_list_module_recapitulatif($module, $user_id){
     global $db;
 
-    $sql = "SELECT * FROM $module";
+    $sql = "SELECT * FROM $module WHERE id_user=:_id_user";
     $query = $db->prepare($sql);
-    $query->execute();
+    $query->execute(array(
+        '_id_user' => $user_id,
+    ));
 
     $list_module = $query->fetchAll();
     return $list_module;

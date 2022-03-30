@@ -1,11 +1,11 @@
 <?php
 
     $ACTIONS_URL_reglementinterieur = [
-        "base" => "http://www.livret-accueil-numerique.fr/page-d-exemple/reglementinterieur/",
-        "list" => "http://www.livret-accueil-numerique.fr/page-d-exemple/reglementinterieur/?action_module=list_reglementinterieur",
-        "create" => "http://www.livret-accueil-numerique.fr/page-d-exemple/reglementinterieur/?action_module=create_reglementinterieur",
-        "update" => "http://www.livret-accueil-numerique.fr/page-d-exemple/reglementinterieur/?action_module=update_reglementinterieur&reglementinterieur_id=%d",
-        "delete" => "http://www.livret-accueil-numerique.fr/page-d-exemple/reglementinterieur/?action_module=delete_reglementinterieur&reglementinterieur_id=%d",
+        "base" => "http://www.livret-accueil-numerique.fr/livret/reglementinterieur/",
+        "list" => "http://www.livret-accueil-numerique.fr/livret/reglementinterieur/?action_module=list_reglementinterieur",
+        "create" => "http://www.livret-accueil-numerique.fr/livret/reglementinterieur/?action_module=create_reglementinterieur",
+        "update" => "http://www.livret-accueil-numerique.fr/livret/reglementinterieur/?action_module=update_reglementinterieur&reglementinterieur_id=%d",
+        "delete" => "http://www.livret-accueil-numerique.fr/livret/reglementinterieur/?action_module=delete_reglementinterieur&reglementinterieur_id=%d",
         "database" => "http://www.livret-accueil-numerique.fr/wp-content/plugins/reglementinterieur_module/models.php"
     ];
 

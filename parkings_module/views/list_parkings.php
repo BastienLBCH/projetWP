@@ -34,6 +34,8 @@
             }
         ?>
     </ul>  
+    <a href="http://www.livret-accueil-numerique.fr/livret/poubelles/?action_module=create_poubelles">Previous </a>
+    <a href="http://www.livret-accueil-numerique.fr/livret/transports/?action_module=create_transports">Next </a>
 </div>
 
 

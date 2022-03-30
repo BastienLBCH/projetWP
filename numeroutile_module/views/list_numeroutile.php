@@ -31,6 +31,8 @@
             }
         ?>
     </ul>  
+    <a href="http://www.livret-accueil-numerique.fr/livret/digicode/?action_module=create_digicode">Previous </a>
+    <a href="http://www.livret-accueil-numerique.fr/livret/electromenager/?action_module=create_electro">Next </a>
 </div>
 
 

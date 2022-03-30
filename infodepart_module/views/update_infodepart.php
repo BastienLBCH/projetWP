@@ -84,9 +84,10 @@
         infodepartForm.addEventListener("submit", function (e) {
             // Désactive le fonctionnement de base du formulaire
             e.preventDefault();
-                            // Récupère l'index de l'option sélectionnée
-                // (Si c'est la première, la deuxième, la troisième, ..., la X-ième qui a été sélectionnée)
-                let selected = champSelect.selectedIndex;
+            
+            // Récupère l'index de l'option sélectionnée
+            // (Si c'est la première, la deuxième, la troisième, ..., la X-ième qui a été sélectionnée)
+            let selected = champSelect.selectedIndex;
 
             // Récupère l'élément html de l'option qui a été sélectionnée
             // Donnant ainsi accès à ses attributs comme sa value ou son text
@@ -106,7 +107,7 @@
             form_data.append("action", "update");
             form_data.append("id", "<?= $_GET["infodepart_id"] ?>");
             form_data.append("instruction", descinfodepart.value);
-            form_data.append("instructionen", descinfodepartEn.value);
+            // form_data.append("instructionen", descinfodepartEn.value);
             form_data.append("horaire", selectedOption.value);
 
            

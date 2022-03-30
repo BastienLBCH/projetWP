@@ -1,9 +1,9 @@
 <?php
 
 /*
-Plugin Name: MVC template
+Plugin Name: Module Accueil
 Plugin URI: no uri
-Description: Simple mvc template
+Description: Module Accueil
 Author: Marie
 Version: 1.0
 Author URI: no uri
@@ -104,3 +104,7 @@ if(current_url_accueil === "<?= $ACTIONS_URL["base"] ?>"){
 }
 
 </script>
+
+<?php
+
+?>

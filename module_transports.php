@@ -15,6 +15,7 @@ Author URI: no uri
 
 
 
+
 // On inclut ici le modèle qui permettra de récupérer la liste des fichiers de test
 require("transports_module/models.php");
 
@@ -107,3 +108,6 @@ if(current_url_transports === "<?= $ACTIONS_URL_transports["base"] ?>"){
 }
 
 </script>
+
+<?php
+

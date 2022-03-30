@@ -1,11 +1,11 @@
 <?php
 
     $ACTIONS_URL_HOTSPOT = [
-        "base" => "http://www.livret-accueil-numerique.fr/page-d-exemple/hotspot/",
-        "list" => "http://www.livret-accueil-numerique.fr/page-d-exemple/hotspot/?action_module=list_hotspot",
-        "create" => "http://www.livret-accueil-numerique.fr/page-d-exemple/hotspot/?action_module=create_hotspot",
-        "update" => "http://www.livret-accueil-numerique.fr/page-d-exemple/hotspot/?action_module=update_hotspot&hotspot_id=%d",
-        "delete" => "http://www.livret-accueil-numerique.fr/page-d-exemple/hotspot/?action_module=delete_hotspot&hotspot_id=%d",
+        "base" => "http://www.livret-accueil-numerique.fr/livret/hotspot/",
+        "list" => "http://www.livret-accueil-numerique.fr/livret/hotspot/?action_module=list_hotspot",
+        "create" => "http://www.livret-accueil-numerique.fr/livret/hotspot/?action_module=create_hotspot",
+        "update" => "http://www.livret-accueil-numerique.fr/livret/hotspot/?action_module=update_hotspot&hotspot_id=%d",
+        "delete" => "http://www.livret-accueil-numerique.fr/livret/hotspot/?action_module=delete_hotspot&hotspot_id=%d",
         "database" => "http://www.livret-accueil-numerique.fr/wp-content/plugins/module_hotspot/models.php"
     ];
 

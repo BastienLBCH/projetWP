@@ -21,7 +21,12 @@ class UserPlugin {
             $user = wp_get_current_user();
             $user_id = ( isset( $user->ID ) ? (int) $user->ID : 0 );
             
-            echo "<div id='user_id' value='$user_id' hidden></div>";
+            ?>
+
+                <div id='user_id' value='<?= $user_id ?>' hidden></div>
+
+            <?php
+
         }
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
     $ACTIONS_URL_infoarrivee = [
-        "base" => "http://www.livret-accueil-numerique.fr/page-d-exemple/infoarrivee/",
-        "list" => "http://www.livret-accueil-numerique.fr/page-d-exemple/infoarrivee/?action_module=list_infoarrivee",
-        "create" => "http://www.livret-accueil-numerique.fr/page-d-exemple/infoarrivee/?action_module=create_infoarrivee",
-        "update" => "http://www.livret-accueil-numerique.fr/page-d-exemple/infoarrivee/?action_module=update_infoarrivee&infoarrivee_id=%d",
-        "delete" => "http://www.livret-accueil-numerique.fr/page-d-exemple/infoarrivee/?action_module=delete_infoarrivee&infoarrivee_id=%d",
+        "base" => "http://www.livret-accueil-numerique.fr/livret/infoarrivee/",
+        "list" => "http://www.livret-accueil-numerique.fr/livret/infoarrivee/?action_module=list_infoarrivee",
+        "create" => "http://www.livret-accueil-numerique.fr/livret/infoarrivee/?action_module=create_infoarrivee",
+        "update" => "http://www.livret-accueil-numerique.fr/livret/infoarrivee/?action_module=update_infoarrivee&infoarrivee_id=%d",
+        "delete" => "http://www.livret-accueil-numerique.fr/livret/infoarrivee/?action_module=delete_infoarrivee&infoarrivee_id=%d",
         "database" => "http://www.livret-accueil-numerique.fr/wp-content/plugins/infoarrivee_module/models.php"
     ];
 

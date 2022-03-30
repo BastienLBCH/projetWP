@@ -29,6 +29,7 @@
     <br>
   
         <input type="submit" value="Valider">
+        <button name="subject" type="submit" value="http://www.livret-accueil-numerique.fr/module/digicode/?action_module=create_digicode">Next</button>
     </form>
 </div>
 
